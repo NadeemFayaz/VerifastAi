@@ -5,4 +5,5 @@ backend/data/data
 backend/data/reuters_cache
 *.log
 embeddings/*.json
+.env
 

@@ -40,7 +40,7 @@ def generate_gemini_response(query: str, passages: List[Dict[str, Any]]) -> str:
         return simple_local_response(query, passages) + "\n\nError: Google Generative AI package not installed. Run 'pip install google-generativeai'."
 
     # Set your API key - preferably from environment variable
-    GOOGLE_API_KEY = os.environ.get("GOOGLE_API_KEY", "AIzaSyCb6-3Pu6U5kbUnTtPMMKM7pf9Jvk4hpUs")
+    GOOGLE_API_KEY = os.environ.get("GOOGLE_API_KEY", "test_key")
     
     try:
         genai.configure(api_key=GOOGLE_API_KEY)
@@ -65,7 +65,7 @@ def generate_gemini_response(query: str, passages: List[Dict[str, Any]]) -> str:
         
         # Try to use a model that's more likely to be available with free tier
         try:
-            model = genai.GenerativeModel('gemini-pro')  # Use standard model first
+            model = genai.GenerativeModel('gemini-2.0-flash')  # Use standard model first
             response = model.generate_content(prompt)
             return response.text
         except (NotFound, ResourceExhausted) as e:
