@@ -10,8 +10,11 @@ from gemini_client import generate_gemini_response
 import uuid
 from session_manager import add_message, get_history, clear_session
 from typing import Optional
+from start import init_server
 
 app = FastAPI()
+
+init_server()
 
 # Add CORS middleware
 app.add_middleware(

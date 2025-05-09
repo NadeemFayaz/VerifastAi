@@ -1,8 +1,8 @@
 node_modules
 venv
 __pycache__
-data/data
-data/reuters_cache
+backend/data/data
+backend/data/reuters_cache
 *.log
 embeddings/*.json
 

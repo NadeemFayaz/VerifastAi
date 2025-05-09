@@ -23,7 +23,7 @@ try:
     )
 
     # Load embeddings
-    with open("../embeddings/article_embeddings.json", "r", encoding="utf-8") as f:
+    with open("./embeddings/article_embeddings.json", "r", encoding="utf-8") as f:
         articles = json.load(f)
 
     # Prepare points
